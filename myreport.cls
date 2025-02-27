@@ -13,19 +13,22 @@
 % カスタムフォントサイズ定義
 \newcommand{\defaultfontsize}{\fontsize{10.5pt}{14pt}\selectfont}
 
-% 本文のフォントを YuMincho に設定
+% 本文のフォントを設定
 \setmainjfont{YuMincho}
+\setmainfont{Times New Roman}
 
-% YuGothic Medium を登録（\bfseries が使えないため明示的に Bold を指定）
+
+% フォントを登録（\bfseries が使えないため明示的に Bold を指定）
 \newjfontfamily\yugothic{YuGothic-Medium}[
     BoldFont=YuGothic-Bold % 太字用にYuGothic-Boldを指定
 ]
+\newfontfamily\arial{Arial}
 
 % 文書開始時にフォントサイズを適用
 \AtBeginDocument{\defaultfontsize}
 
 % セクション・サブセクションのタイトルに適用するフォントサイズ
-\titleformat{\section}[block]{\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesection}{1em}{}
+\titleformat{\section}[block]{\arial\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesection}{1em}{}
 \titleformat{\subsection}[block]{\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}[block]{\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesubsubsection}{1em}{}
 
