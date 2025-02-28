@@ -10,27 +10,35 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}  % セクションフォーマットを調整するパッケージ
 \RequirePackage{luatexja-fontspec}  % フォントの設定
-% カスタムフォントサイズ定義
+
+% フォントの設定 
+\newjfontfamily\YuGothic{YuGothic-Medium}[
+    BoldFont=YuGothic-Bold % 太字用にYuGothic-Boldを指定
+]
+\newjfontfamily\YuMincho{YuMincho}
+\newfontfamily\TimesNewRoman{Times New Roman}
+\newfontfamily\Arial{Arial}
+
+\newcommand{\headlinefont}{\Arial\YuGothic}
+\newcommand{\bodyfont}{\Arial\YuGothic}
 \newcommand{\defaultfontsize}{\fontsize{10.5pt}{14pt}\selectfont}
 
 % 本文のフォントを設定
 \setmainjfont{YuMincho}
 \setmainfont{Times New Roman}
 
-
-% フォントを登録（\bfseries が使えないため明示的に Bold を指定）
-\newjfontfamily\yugothic{YuGothic-Medium}[
-    BoldFont=YuGothic-Bold % 太字用にYuGothic-Boldを指定
-]
-\newfontfamily\arial{Arial}
-
 % 文書開始時にフォントサイズを適用
 \AtBeginDocument{\defaultfontsize}
 
 % セクション・サブセクションのタイトルに適用するフォントサイズ
-\titleformat{\section}[block]{\arial\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesection}{1em}{}
-\titleformat{\subsection}[block]{\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}[block]{\yugothic\fontsize{10.5pt}{14pt}\selectfont}{\thesubsubsection}{1em}{}
+\titleformat{\section}[block]{\headlinefont\defaultfontsize}{\thesection}{1em}{}
+\titleformat{\subsection}[block]{\headlinefont\defaultfontsize}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}[block]{\headlinefont\defaultfontsize}{\thesubsubsection}{1em}{}
+
+% セクション番号のフォーマットを変更 
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\thesubsection\arabic{subsubsection}.}
 
 % ヘッダーとフッターの設定
 \pagestyle{fancy}
