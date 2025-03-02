@@ -4,11 +4,8 @@
 % ベースクラス
 \LoadClass[a4paper]{jlreq}
 
-% --- ページレイアウトの設定 ---
-\RequirePackage{geometry}
-\geometry{top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
-
 % --- パッケージの読み込み ---
+\RequirePackage{geometry}
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}    % セクションフォーマット
 \RequirePackage{luatexja-fontspec} % フォント
@@ -16,6 +13,14 @@
 \RequirePackage{graphicx}
 \RequirePackage{float}
 \RequirePackage{url}
+\RequirePackage{etoolbox}
+
+% --- ページスタイルの設定 ---
+\geometry{top=1.5cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
+\makeatletter
+\patchcmd{\@afterheading}{\clubpenalty\@M}{\indent\clubpenalty\@M}{}{}
+\makeatother
+
 
 % --- フォントの設定 ---
 \newjfontfamily\YuGothic{YuGothic-Medium}[BoldFont=YuGothic-Bold]
