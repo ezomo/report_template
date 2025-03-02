@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{myreport}[2025/02/28 Custom LuaTeX-ja Report Class]
+\ProvidesClass{jreport}[2025/02/28 Custom LuaTeX-ja Report Class]
 
 % ベースクラス
 \LoadClass[a4paper]{jlreq}
