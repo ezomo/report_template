@@ -20,8 +20,7 @@
   - **本文:** Times New Roman（半角）, 游明朝（全角）
 - **段落:** 冒頭は全角スペース 1 つ分空ける
 
-### 図の挿入
-- **図内の文字サイズ:** 10.5pt
+### 図の挿入(表はまだです)
 - **キャプションフォント:** Times New Roman（半角）, 游明朝（全角）
 - **キャプション番号:** アラビア数字で通し番号を付与
 - **配置:** 中央揃え
@@ -36,7 +35,7 @@ LaTeX で通常の方法で記述すれば適切にフォーマットされま�
 #### 例
 ```latex
 \begin{thebibliography}{9}
-    \item "rm コマンド", IBM Corporation, \url{https://www.ibm.com/docs/ja/aix/7.2?topic=r-rm-command}, \today（非推奨）参照。
+    \item 「rm コマンド」, IBM Corporation, \url{https://www.ibm.com/docs/ja/aix/7.2?topic=r-rm-command}, \today（非推奨）参照。
     \item 三宅英明, 大角祐介, 「新しい Linux の教科書 第 2 版」, SB クリエイティブ, pp.52-53, 2024.
 \end{thebibliography}
 ```
@@ -62,7 +61,7 @@ LaTeX で通常の方法で記述すれば適切にフォーマットされま�
     ```
   - さらに、`latexindent` はフォーマットだけでなく、置換も行うことができます。
     詳しくは以下の記事を参考にしてください（私はまだ試していません）。
-    - [LaTeX 文書の自動整形と置換](https://zenn.dev/mimifuwa/articles/a0606b0a421836)
+    - [latexindentで句読点を置換する](https://zenn.dev/mimifuwa/articles/a0606b0a421836)
 
 ## macOS でシステムフォントを利用する方法
 デフォルトの Mac フォントを使用するには、`texmf.cnf` を編集する必要があります。
