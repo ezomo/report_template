@@ -1,0 +1,5 @@
+replacements:
+  - this: "、"
+    that: "，"
+  - this: "。"
+    that: "．"
