@@ -5,6 +5,7 @@
 ## 対応環境
 - **OS:** macOS（その他の OS については未検証）
 - **LaTeX:** lualatex
+- formatter latexindent　(これで句読点を置換している)
 - **フォーマット基準:** 「レポートの書き方（2023 年 4 月 10 日版）」に準拠
 
 ## レポートのフォーマット
@@ -19,15 +20,24 @@
   - **見出し:** Arial（半角）, 游ゴシック（全角）
   - **本文:** Times New Roman（半角）, 游明朝（全角）
 - **段落:** 冒頭は全角スペース 1 つ分空ける
+- **句読点の表記:** 句点は全角の「．」，読点は全角の「，」で統一する．「。」と「、」は使わない．
 
-### 図の挿入(表はまだです)
-- **キャプションフォント:** Times New Roman（半角）, 游明朝（全角）
+### 図の挿入
+- **キャプションフォント:** Times New Roman（半角），游明朝（全角）
 - **キャプション番号:** アラビア数字で通し番号を付与
 - **配置:** 中央揃え
 - **使用例:**
   ```latex
+  % 一つ
   \addfigure{./pictures/6.png}{いろんなことをした}
+
+  % 横並びに２つ
+  \adddoublefigures{./pictures/6.png}{./pictures/7.png}{いろんなことをした}{いろんなことをした}
   ```
+### 表の挿入
+- **変換方法:** 以下のサイトで Excel の表を LaTeX に変換してください．変換後のコードを貼り付けるだけで使用できます．  
+https://tableconvert.com/excel-to-latex
+
 
 ### 参考文献の書き方
 LaTeX で通常の方法で記述すれば適切にフォーマットされます。
@@ -38,6 +48,27 @@ LaTeX で通常の方法で記述すれば適切にフォーマットされま�
     \item 「rm コマンド」, IBM Corporation, \url{https://www.ibm.com/docs/ja/aix/7.2?topic=r-rm-command}, \today（非推奨）参照。
     \item 三宅英明, 大角祐介, 「新しい Linux の教科書 第 2 版」, SB クリエイティブ, pp.52-53, 2024.
 \end{thebibliography}
+
+<!-- もしくは -->
+あーだこうーだ\cite{sample2}．　%参照する時
+
+% レポートの最後に
+\begin{thebibliography}{9}
+\bibitem{sample}
+  \newblock 三宅英明,
+  \newblock　大角祐介,
+  \newblock　「新しい Linux の教科書 第 2 版」,
+  \newblock　SB クリエイティブ,
+  \newblock　pp.52-53,
+  \newblock　2024.
+
+\bibitem{sample2}
+  \newblock 「rm コマンド」,
+  \newblock　IBM Corporation,
+  \newblock　\url{https://www.ibm.com/docs/ja/aix/7.2?topic=r-rm-command},
+  \newblock　\today（非推奨）参照.
+\end{thebibliography}
+
 ```
 
 ## 使用例
@@ -50,18 +81,7 @@ LaTeX で通常の方法で記述すれば適切にフォーマットされま�
 以下の記事を参考にしてください。
 - [MacTeX の導入](https://qiita.com/tofu/items/6f590abb11a344b1fe7a)
 - [TeXWiki - MacTeX](https://texwiki.texjp.org/?MacTeX#t244993f)
-
-## 便利なツール
-- **`latexindent`（LaTeX のコード整形）**
-  - `latexindent` を使用すると、文書を綺麗にフォーマットできます。
-  - 私は VSCode で、保存時に自動でフォーマットされるように設定しています。
-  - `latexindent` のインストール方法:
-    ```sh
-    brew install latexindent
-    ```
-  - さらに、`latexindent` はフォーマットだけでなく、置換も行うことができます。
-    詳しくは以下の記事を参考にしてください（私はまだ試していません）。
-    - [latexindentで句読点を置換する](https://zenn.dev/mimifuwa/articles/a0606b0a421836)
+- [latexindent](https://formulae.brew.sh/formula/latexindent)
 
 ## macOS でシステムフォントを利用する方法
 デフォルトの Mac フォントを使用するには、`texmf.cnf` を編集する必要があります。
