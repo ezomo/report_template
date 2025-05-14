@@ -1,0 +1,75 @@
+{
+    "editor.formatOnSave": true,
+    // LaTeX 設定
+    "[tex]": {
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.tabSize": 4
+    },
+    "[latex]": {
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "[bibtex]": {
+        "editor.tabSize": 4
+    },
+    // LaTeX Formatter 設定
+    "latex-workshop.formatting.latex": "latexindent",
+    // LaTeX Workshop 設定
+    "latex-workshop.formatting.latexindent.args": [
+        "-c",
+        "%DIR%/",
+        "%TMPFILE%",
+        "-l",
+        "latexindentrc.yaml",
+        "-r"
+    ],
+    "latex-workshop.intellisense.package.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "onSave",
+    "latex-workshop.latex.clean.fileTypes": [
+        "*.aux",
+        "*.bbl",
+        "*.blg",
+        "*.idx",
+        "*.ind",
+        "*.lof",
+        "*.lot",
+        "*.out",
+        "*.toc",
+        "*.acn",
+        "*.acr",
+        "*.alg",
+        "*.glg",
+        "*.glo",
+        "*.gls",
+        "*.ist",
+        "*.fls",
+        "*.log",
+        "*.fdb_latexmk",
+        "*.snm",
+        "*.nav",
+        "*.dvi",
+        "*.synctex.gz"
+    ],
+    "latex-workshop.latex.outDir": "out",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "lualatex",
+            "tools": [
+                "lualatex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualatex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-output-directory=out",
+                "%DOC%"
+            ]
+        }
+    ],
+}
