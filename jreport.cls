@@ -37,7 +37,7 @@
 
 % --- 文書開始時のフォント適用 ---
 \AtBeginDocument{
-    \defaultfontsize
+	\defaultfontsize
 }
 
 % --- セクションフォーマット ---
@@ -55,9 +55,19 @@
 
 % --- 図の挿入マクロ ---
 \newcommand{\addfigure}[2]{
-    \begin{figure}[H]
-        \centering
-        \includegraphics[width=\linewidth]{#1}
-        \caption{\headlinefont #2}
-    \end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=\linewidth]{#1}
+		\caption{\headlinefont #2}
+	\end{figure}
+}
+
+\newcommand{\adddoublefigures}[4]{%
+	\begin{minipage}{0.49\linewidth}
+		\addfigure{#1}{#2}
+	\end{minipage}%
+	\hfill
+	\begin{minipage}{0.49\linewidth}
+		\addfigure{#3}{#4}
+	\end{minipage}
 }
